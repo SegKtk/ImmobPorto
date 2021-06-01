@@ -94,7 +94,8 @@
   		$req = "select * from offres where id_user=".$_SESSION['id_user'];
   		$result = $conn->prepare($req);
   		$result->execute();
-
+  		$i = 0;
+  		if ($result)
   		while($ligne = $result->fetch(PDO::FETCH_ASSOC))
   		{
   	?>
@@ -102,14 +103,14 @@
     <tr>
 
       <th scope="row"><?php echo $ligne['id_offre'];?></th>
-      <td> <img src="<?php echo $ligne['photo1'];    ?>" class="img-fuild" alt="image"></td>
+      <td> <img src="<?php echo $ligne['photo1'];    ?>" class="img-fuild" alt="image">	<br><br> <input type="button" style="margin-bottom: 12px;" name="" value="Modifier"></td>
       <td><?php echo $ligne['nbr_chambre']." Chambre(s)<br>", $ligne['nbr_salon']." Salon(s)<br>", $ligne['nbr_douche']." Douche(s)<br>"; ?></td>
       <td><?php echo $ligne['prix'];  ?></td>
       
     </tr>
-    <?php } ?>
+    <?php $i++; } ?>
   </tbody>
-</table>
+</table>   
 
 
 
@@ -117,22 +118,33 @@
 
 <!-- Modal -->
 <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-  <div class="modal-dialog">
+  <div class="modal-dialog modal-dialog-scrollable">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="staticBackdropLabel">Modal title</h5>
+        <h5 class="modal-title" id="staticBackdropLabel">Créer une annonce</h5>
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
-        <?php require_once 'cree_annonce.php'; ?>
+      	<form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">
+      		<?php require_once 'cree_annonce.php'; ?>
+      		<div class="modal-footer">
+        		<button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fermer</button>
+        		<input type="submit" name="btconfirm" value="Confirmer" class="btn btn-primary"> 
+      		</div>
+      	</form>
+        
       </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Understood</button>
-      </div>
+      
     </div>
   </div>
 </div>
+
+
+<?php 
+	require_once 'connexion.php';
+
+
+?>
 
 
 	    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>
