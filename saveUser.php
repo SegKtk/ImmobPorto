@@ -2,17 +2,19 @@
 
 <?php 
 
-$target_dir = "images/clients/";
+
+
+$target_dir = "images/clients";
+
 
 $target_file = $target_dir.basename($_FILES["fileToUpload1"]["name"]);
 $uploadOk = 1;
 $imageFileType = strtolower(pathinfo($target_file,PATHINFO_EXTENSION));
 
 // Vérifie si le fichier est une vraie image ou pas.
-if(isset($_POST["btcompte"])) {
+if(isset($_POST["btconfirm"])) {
   $check = getimagesize($_FILES["fileToUpload1"]["tmp_name"]);
   if($check !== false) {
-    echo "File is an image - ".$check["mime"].".";
     $uploadOk = 1;
   } else {
     $err = "<span style='color:red;'>Ceci n'est pas une image.</span>";
@@ -41,18 +43,20 @@ if ($uploadOk == 0) {
   if (move_uploaded_file($_FILES["fileToUpload1"]["tmp_name"], $target_file)) {
     echo "Le fichier ".htmlspecialchars(basename($_FILES["fileToUpload1"]["name"]))." est bien télécharger.";
 
+    	$req = "insert into utilisateur(nom,email,password,photo) values('".$_POST['nom']."','".$_POST['email']."','".$_POST['password']."','".$target_file."')";
+    	echo $req;
+       $result = $conn->prepare($req);
+       $result->execute();
 
-    //$current_offre->save_offre();
-
-    $req = "insert into utilisateur(nom,email,password,photo) values('".$_POST['nom']."','".$_POST['email']."','".$_POST['password']."','".$_POST['photo']."'";
-        $result = $conn->prepare($req);
-        $result->execute();
-
+        echo "<br>Tout se passe bien";
 
   } else {
-    echo "<span style='color:red;'>Désolé, une erreure s'est produite pendant le téléchargement.</span>";
+    echo "<alert><span style='color:red;'>Désolé, une erreure s'est produite pendant le téléchargement.</span></script>";
   }
 }
+
+
+
 
 
  ?>

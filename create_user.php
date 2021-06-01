@@ -6,11 +6,20 @@
 	<title>Mon compte</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+	<style type="text/css">
+		.formule{
+			padding-top: 33px;
+		}
+	</style>
 	<!--<link rel="stylesheet" type="text/css" href="bootstrap4/bootstrap.css">-->
 </head>
 <body>
 
-<form class="was-validated ps-5 pe-5 text-center border border-dark border-5" style="background-image:url('images/bgcpt.jpg');" action="saveUser.php" method="post">
+<?php require_once 'Nav.php'; ?>
+
+<div class="formule">
+	
+	<form class="was-validated ps-5 pe-5 text-center border border-dark border-5" style="background-image:url('images/bgcpt.jpg');" action="saveUser.php" method="post" enctype="multipart/form-data">
 	<legend class="bg-dark text-white text-center">Créer votre compte</legend>
   <div class="mb-3">
 
@@ -37,7 +46,7 @@
 
   <div class="mb-3">
    <input type="file" class="form-control" placeholder="choisissez votre profil" aria-label="Input group example" aria-describedby="btnGroupAddon" name="fileToUpload1" id="fileToUpload1" required>
-    <div class="invalid-feedback">Example invalid form file feedback</div>
+    <div class="invalid-feedback">Fichier invalide pour moment</div>
   </div>
 
   <div class="mb-3">
@@ -47,6 +56,8 @@
   	<input type="submit" name="btcompte" class="btn btn-success" value="Créer le compte">
   </div>
 </form>
+</div>
+
 
 
 

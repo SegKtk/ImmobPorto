@@ -103,7 +103,7 @@
     <tr>
 
       <th scope="row"><?php echo $ligne['id_offre'];?></th>
-      <td> <img src="<?php echo $ligne['photo1'];    ?>" class="img-fuild" alt="image">	<br><br> <input type="button" style="margin-bottom: 12px;" name="" value="Modifier"></td>
+      <td> <img src="<?php echo $ligne['photo1'];    ?>" class="img-fuild" alt="image" width="200px" heigth = "50px">	<br><br> <input type="button" style="margin-bottom: 12px;" name="" value="Modifier"></td>
       <td><?php echo $ligne['nbr_chambre']." Chambre(s)<br>", $ligne['nbr_salon']." Salon(s)<br>", $ligne['nbr_douche']." Douche(s)<br>"; ?></td>
       <td><?php echo $ligne['prix'];  ?></td>
       
