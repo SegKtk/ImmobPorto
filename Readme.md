@@ -1,0 +1,1 @@
+Le  fichier "fichier.sql" contient la déclaration des tables crées dans la base de données.
