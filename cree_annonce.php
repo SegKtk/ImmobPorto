@@ -13,28 +13,33 @@
 	
 		<div class="input-group">
  	    	<div class="input-group-text" id="btnGroupAddon">Chambre(s)</div>
-    		<input type="number" class="form-control" placeholder="combien de chambre avez-vous?" aria-label="Input group example" aria-describedby="btnGroupAddon" required>
+    		<input type="number" name="nbr_chambre" class="form-control" placeholder="combien de chambre avez-vous?" aria-label="Input group example" aria-describedby="btnGroupAddon" required>
   		</div>
   		<br>
   		<div class="input-group">
  	    	<div class="input-group-text" id="btnGroupAddon">Salon(s)</div>
-    		<input type="number" class="form-control" placeholder="combien de salon avez-vous?" aria-label="Input group example" aria-describedby="btnGroupAddon" required>
+    		<input type="number" name="nbr_salon" class="form-control" placeholder="combien de salon avez-vous?" aria-label="Input group example" aria-describedby="btnGroupAddon" required>
   		</div>
   		<br>
   		<div class="input-group">
  	    	<div class="input-group-text" id="btnGroupAddon">Douche(s)</div>
-    		<input type="number" class="form-control" placeholder="combien de douche avez-vous?" aria-label="Input group example" aria-describedby="btnGroupAddon" required>
+    		<input type="number" name="nbr_douche" class="form-control" placeholder="combien de douche avez-vous?" aria-label="Input group example" aria-describedby="btnGroupAddon" required>
   		</div>
   		<br>
   		<div class="input-group">
  	    	<div class="input-group-text" id="btnGroupAddon">Prix de location :</div>
-    		<input type="number" class="form-control" placeholder="...en FCFA" aria-label="Input group example" aria-describedby="btnGroupAddon" required>
+    		<input type="number" name="prix" class="form-control" placeholder="...en FCFA" aria-label="Input group example" aria-describedby="btnGroupAddon" required>
   		</div>
   		<br>
   		<div class="input-group">
  	    	<div class="input-group-text" id="btnGroupAddon">Photo</div>
-    		<input type="file" class="form-control" placeholder="...en FCFA" aria-label="Input group example" aria-describedby="btnGroupAddon" name="fileToUpload" id="fileToUpload">
+    		<input type="file" class="form-control" placeholder="...en FCFA" aria-label="Input group example" aria-describedby="btnGroupAddon" name="fileToUpload" id="fileToUpload" required>
   		</div>
+
+  		<?php 
+  			$_SESSION['err'] = "";
+  			echo $_SESSION['err']; 
+  		?>
 		
 	
 

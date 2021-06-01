@@ -24,7 +24,7 @@ class Offre{
 
     public function save_offre(){
         require_once('connexion.php');
-        $sql="insert into offres(nbr_chambre,nbr_salon,nbr_douche,prix,photo1,photo2,id_user) values(".$this->nbr_chambre.",".$this->nbr_salon.",".$this->nbr_douche.",".$this->prix.",'".$this->photo1."','".$this->photo2."',".$this->id_user.")";
+        $sql="insert into offres(nbr_chambre,nbr_salon,nbr_douche,prix,photo1,id_user) values(".$this->nbr_chambre.",".$this->nbr_salon.",".$this->nbr_douche.",".$this->prix.",'".$this->photo1."',".$this->id_user.")";
         $result = $conn->prepare($sql);
         $result->execute();
     }

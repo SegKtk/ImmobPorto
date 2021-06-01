@@ -1,4 +1,4 @@
-<?php require_once 'connexion.php'; ?>
+<?php require_once 'connexion.php'; session_start(); ?>
 <!doctype html>
 <html>
 <head>
@@ -125,7 +125,7 @@
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
-      	<form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">
+      	<form action="saveOffre.php" method="post" enctype="multipart/form-data">
       		<?php require_once 'cree_annonce.php'; ?>
       		<div class="modal-footer">
         		<button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fermer</button>
@@ -140,11 +140,7 @@
 </div>
 
 
-<?php 
-	require_once 'connexion.php';
 
-
-?>
 
 
 	    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>
