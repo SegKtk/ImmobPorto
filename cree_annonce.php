@@ -33,7 +33,7 @@
   		<br>
   		<div class="input-group">
  	    	<div class="input-group-text" id="btnGroupAddon">Photo</div>
-    		<input type="file" class="form-control" placeholder="...en FCFA" aria-label="Input group example" aria-describedby="btnGroupAddon" name="fileToUpload" id="fileToUpload" required>
+    		<input type="file" class="form-control" placeholder="mettez la photo de l'annonce" aria-label="Input group example" aria-describedby="btnGroupAddon" name="fileToUpload" id="fileToUpload" required>
   		</div>
 
   		<?php 

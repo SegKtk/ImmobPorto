@@ -1,6 +1,4 @@
-<?php echo("nie"); ?>
-
-<?php require_once 'connexion.php'; session_start(); ?>
+<?php require_once 'connexion.php';?>
 <!doctype html>
 <html>
 <head>
@@ -12,80 +10,41 @@
 </head>
 <body>
 
-<form class="was-validated">
+<form class="was-validated ps-5 pe-5 text-center border border-dark border-5" style="background-image:url('images/bgcpt.jpg');" action="saveUser.php" method="post">
+	<legend class="bg-dark text-white text-center">Créer votre compte</legend>
   <div class="mb-3">
-    <label for="validationTextarea" class="form-label">Textarea</label>
-    <textarea class="form-control is-invalid" id="validationTextarea" placeholder="Required example textarea" required></textarea>
-    <div class="invalid-feedback">
-      Please enter a message in the textarea.
-    </div>
-  </div>
-
-  <br>
 
   		<div class="input-group">
  	    	<div class="input-group-text" id="btnGroupAddon">Votre nom :</div>
-    		<input type="text" name="nbr_chambre" class="form-control" placeholder="combien de chambre avez-vous?" aria-label="Input group example" aria-describedby="btnGroupAddon" required>
+    		<input type="text" name="nom" class="form-control" placeholder="Entrez votre nom" aria-label="Input group example" aria-describedby="btnGroupAddon" required>
   		</div>
-  <br>
+
 
     <br>
 
   		<div class="input-group">
  	    	<div class="input-group-text" id="btnGroupAddon">Votre mail :</div>
-    		<input type="email" name="nbr_chambre" class="form-control" placeholder="combien de chambre avez-vous?" aria-label="Input group example" aria-describedby="btnGroupAddon" required>
+    		<input type="email" name="email" class="form-control" placeholder="Entrez votre e-mail" aria-label="Input group example" aria-describedby="btnGroupAddon" required>
   		</div>
-  <br>
-
+ 
   <br>
 
   		<div class="input-group">
- 	    	<div class="input-group-text" id="btnGroupAddon">Votre mail :</div>
-    		<input type="email" name="nbr_chambre" class="form-control" placeholder="combien de chambre avez-vous?" aria-label="Input group example" aria-describedby="btnGroupAddon" required>
+ 	    	<div class="input-group-text" id="btnGroupAddon">Votre mot de passe :</div>
+    		<input type="password" name="password" class="form-control" placeholder="Tapez un mot de passe" aria-label="Input group example" aria-describedby="btnGroupAddon" required>
   		</div>
   <br>
 
-  <br>
-
-  		<div class="input-group">
- 	    	<div class="input-group-text" id="btnGroupAddon">Mot de passe :</div>
-    		<input type="email" name="nbr_chambre" class="form-control" placeholder="combien de chambre avez-vous?" aria-label="Input group example" aria-describedby="btnGroupAddon" required>
-  		</div>
-  <br>
-
-  <div class="form-check mb-3">
-    <input type="checkbox" class="form-check-input" id="validationFormCheck1" required>
-    <label class="form-check-label" for="validationFormCheck1">Check this checkbox</label>
-    <div class="invalid-feedback">Example invalid feedback text</div>
-  </div>
-
-  <div class="form-check">
-    <input type="radio" class="form-check-input" id="validationFormCheck2" name="radio-stacked" required>
-    <label class="form-check-label" for="validationFormCheck2">Toggle this radio</label>
-  </div>
-  <div class="form-check mb-3">
-    <input type="radio" class="form-check-input" id="validationFormCheck3" name="radio-stacked" required>
-    <label class="form-check-label" for="validationFormCheck3">Or toggle this other radio</label>
-    <div class="invalid-feedback">More example invalid feedback text</div>
-  </div>
-
   <div class="mb-3">
-    <select class="form-select" required aria-label="select example">
-      <option value="">Open this select menu</option>
-      <option value="1">One</option>
-      <option value="2">Two</option>
-      <option value="3">Three</option>
-    </select>
-    <div class="invalid-feedback">Example invalid select feedback</div>
-  </div>
-
-  <div class="mb-3">
-    <input type="file" class="form-control" aria-label="file example" required>
+   <input type="file" class="form-control" placeholder="choisissez votre profil" aria-label="Input group example" aria-describedby="btnGroupAddon" name="fileToUpload1" id="fileToUpload1" required>
     <div class="invalid-feedback">Example invalid form file feedback</div>
   </div>
 
   <div class="mb-3">
-  	<input type="submit" name="btcompte" class="btn btn-primary" value="Créer le compte">
+  	<input type="reset" name="annuler" class="btn btn-secondary" value="Annuler">
+  </div>
+  <div class="mb-3">
+  	<input type="submit" name="btcompte" class="btn btn-success" value="Créer le compte">
   </div>
 </form>
 
