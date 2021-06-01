@@ -1,3 +1,17 @@
+<?php require_once 'connexion.php'; ?>
+
+
+
+
+<?php 
+
+        $req = "select * from offres";
+        $result = $conn->prepare($req);
+        $result->execute();
+        $limite = 0;
+        $tmp = $result;
+
+ ?>
 <div class="col mb-5">
     <div class="card h-100">
     <!-- Product image-->
