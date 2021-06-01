@@ -44,14 +44,22 @@ if($imageFileType != "jpg" && $imageFileType != "png" && $imageFileType != "jpeg
 
 // Je vérifie si l'enregistrement de l'image est autorisé.
 if ($uploadOk == 0) {
-  echo "Sorry, your file was not uploaded.";
+  echo "<span style='color:red;'>Désolé, une erreure s'est produite pendant le téléchargement.</span>";
 // Si tout est ok
 } else {
   if (move_uploaded_file($_FILES["fileToUpload"]["tmp_name"], $target_file)) {
     echo "Le fichier ".htmlspecialchars(basename($_FILES["fileToUpload"]["name"]))." est bien télécharger.";
-    $current_offre = new Offre($_POST['nbr_chambre'], $_POST['nbr_salon'], $_POST['nbr_douche'], $_POST['prix'],$target_file, $_SESSION['id_user']);
+
+
+    //$current_offre->save_offre();
+
+    $req = "insert into offres(nbr_chambre,nbr_salon,nbr_douche,prix,photo1,id_user) values(".$_POST['nbr_chambre'].",".$_POST['nbr_salon'].",".$_POST['nbr_douche'].",".$_POST['prix'].",'".$target_file."',".$_SESSION['id_user'].")";
+        $result = $conn->prepare($req);
+        $result->execute();
+
+
   } else {
-    echo "Sorry, there was an error uploading your file.";
+    echo "<alert><span style='color:red;'>Désolé, une erreure s'est produite pendant le téléchargement.</span></script>";
   }
 }
 

@@ -31,7 +31,7 @@
                         <button type="button" class="btn btn-outline-primary monlog"><a href="inscris.php" style="color:black;">Login</a></button>
                     </div>
                     <div class="d-flex ms-lg-2">
-                        <button type="button" class="btn btn-outline-secondary"><a href="#" style="color:black;">Créer un compte</a></button>
+                        <button type="button" class="btn btn-outline-secondary"><a href="create_user.php" style="color:black;">Créer un compte</a></button>
                     </div>
 
                 </div>
