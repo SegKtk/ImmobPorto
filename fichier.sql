@@ -14,3 +14,8 @@ prix int,
 photo1 varchar,
 photo2 varchar,
 id_user int references utilisateur(id_user));
+
+create table demande(
+id_ask serial primary key,
+formule varchar,
+id_user int references utilisateur(id_user));
