@@ -61,11 +61,11 @@
 
 		<div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
   			<div class="offcanvas-header">
-    			<h5 id="offcanvasRightLabel">Profile</h5>
+    			<h5 id="offcanvasRightLabel">Votre Profile</h5>
     			<button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
   			</div>
  		    <div class="offcanvas-body">
-  		    lba
+  		    ICI EST LE CORPS DU PROFILE
   			</div>
 		</div>
       </div>
@@ -103,7 +103,9 @@
     <tr>
 
       <th scope="row"><?php echo $ligne['id_offre'];?></th>
-      <td> <img src="<?php echo $ligne['photo1'];    ?>" class="img-fuild" alt="image" width="200px" heigth = "50px">	<br><br> <input type="button" style="margin-bottom: 12px;" name="" value="Modifier"></td>
+      <td> <img src="<?php echo $ligne['photo1'];    ?>" class="img-fuild" alt="image" width="200px" heigth = "50px">	<br><br> <button type="button" class="btn btn-danger">Supprimer</button>
+ <button type="button" class="btn btn-warning">Modifier</button>
+      </td>
       <td><?php echo $ligne['nbr_chambre']." Chambre(s)<br>", $ligne['nbr_salon']." Salon(s)<br>", $ligne['nbr_douche']." Douche(s)<br>"; ?></td>
       <td><?php echo $ligne['prix'];  ?></td>
       
