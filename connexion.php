@@ -10,7 +10,7 @@ try{
  $conn = new PDO($dsn);
  $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
  if($conn){
-  echo "Connecté à la base $dbname  avec succès! ";
+  //echo "Connecté à la base $dbname  avec succès! ";
  }
 }catch (PDOException $e){
  echo $e->getMessage();

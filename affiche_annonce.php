@@ -5,24 +5,27 @@
 
 <?php 
 
-        $req = "select * from offres";
+        $req = "select * from offres order by id_offre desc";
         $result = $conn->prepare($req);
         $result->execute();
         $limite = 0;
-        $tmp = $result;
+
+
+         while(($ligne = $result->fetch(PDO::FETCH_ASSOC)) && ($limite < 9))
+            {
 
  ?>
 <div class="col mb-5">
     <div class="card h-100">
     <!-- Product image-->
-        <img class="card-img-top" src="images/default.jpeg" alt="..." />
+        <img class="card-img-top" src="<?php echo $ligne['photo1']; ?>" alt="..." />
                             <!-- Product details-->
         <div class="card-body p-4">
             <div class="text-center">
                                     <!-- Product name-->
                 <h5 class="fw-bolder">Fancy Product</h5>
                                     <!-- Product price-->
-                $40.00 - $80.00
+                <?php echo $ligne['prix']." FCFA"; ?>
             </div>
         </div>
                             <!-- Product actions-->
@@ -31,3 +34,4 @@
         </div>
     </div>
 </div>
+<?php $limite++; } ?>
